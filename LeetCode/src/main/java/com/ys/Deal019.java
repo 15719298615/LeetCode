@@ -69,7 +69,7 @@ public class Deal019 {
 //            }
 //            if(j==0)
 //                break;
-//        }
+//        } 
         for(int i=1;i<5;i++){
         	for(int k=1;k<6;k++){
         		System.out.println(i+" "+k+":"+dp[i][k]);
