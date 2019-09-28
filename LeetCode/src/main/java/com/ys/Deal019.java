@@ -2,6 +2,7 @@ package com.ys;
 
 
 /**
+ * 0-1背包
 有 N 件物品和一个容量是 V
 
 的背包。每件物品只能使用一次。
@@ -46,7 +47,7 @@ public class Deal019 {
         int[][] dp = new int[N+1][V+1];
         //为了便于理解,将dp[i][0]和dp[0][j]均置为0，从1开始计算
         for(int i=1;i<N+1;i++){
-            for(int j=1;j<V+1;j++){
+            for(int j=V;j>0;j--){
                 //如果第i件物品的重量大于背包容量j,则不装入背包
                 //由于weight和value数组下标都是从0开始,故注意第i个物品的重量为weight[i-1],价值为value[i-1]
                 if(weight[i-1] > j)
