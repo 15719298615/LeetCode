@@ -1,1 +1,21 @@
 
+package b2013;
+
+import java.util.Calendar;
+
+public class _01世纪末的星期 {
+
+    public static void main(String[] args) {
+        Calendar calendar = Calendar.getInstance();
+        for (int year=1999;year<10000;year+=100){
+            calendar.set(Calendar.YEAR,year);
+            calendar.set(calendar.MONTH,11);//代表的是12月
+            calendar.set(calendar.DAY_OF_MONTH,31);
+            if (calendar.get(Calendar.DAY_OF_WEEK)==1){//1代表的是星期天
+                System.out.println(year);
+                break;
+            }
+        }
+
+    }
+}
