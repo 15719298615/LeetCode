@@ -21,7 +21,7 @@ package b2017;
 //这种接法其实也就是递归，想明白了和循环差不多
 //
 public class _02纸牌三角屋 {
-
+ 
     static int[] a = {1,2,3,4,5,6,7,8,9};
     static int ans;
 
