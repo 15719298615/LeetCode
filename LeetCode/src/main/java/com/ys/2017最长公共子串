@@ -16,3 +16,28 @@ asdfas
 werasdfaswer
 
 输出：6
+public class 最长公共子串 {
+    public static void main(String[] args) {
+            String str1 = "asdfas";
+            String str2 = "werasdfaswer";
+            System.out.println(getCommonStrLength(str1, str2));
+
+    }
+    private static int getCommonStrLength(String str1, String str2) {
+        int len1 = str1.length();
+        int len2 = str2.length();
+        int[][] dp = new int[len1 + 1][len2 + 1];
+        int max = 0;
+
+        for (int i = 1; i <= len1; i++) {
+            for (int j = 1; j <= len2; j++) {
+                if (str1.charAt(i - 1) == str2.charAt(j - 1)) {
+                    //这里其实就是一个动态规划,就是把这两个穿，变成一个xy坐标轴，两个相等的话就把他的斜下方的那个加一
+                    dp[i][j] = dp[i - 1][j - 1] + 1;
+                    if (dp[i][j]>max){ max=dp[i][j]; }//同时判断一次max。
+                }
+            }
+        }
+        return max;
+    }
+}
